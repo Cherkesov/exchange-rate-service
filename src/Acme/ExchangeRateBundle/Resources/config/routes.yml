@@ -1,0 +1,22 @@
+#acme_demo_user_all:
+#    pattern:  /api/currencies
+#    defaults: { _controller: AcmeExchangeRateBundle:Currency:all, _format: ~ }
+#    requirements:
+#        _method: GET
+#
+#acme_demo_user_get:
+#    pattern:  /api/currencies/{id}
+#    defaults: { _controller: AcmeExchangeRateBundle:Currency:get, _format: ~ }
+#    requirements:
+#        _method: GET
+#        id: "\d+"
+
+acme_rest_api_currencies:
+    type: rest
+    prefix: /v1
+    resource: "Acme\ExchangeRateBundle\Controller\CurrencyController"
+
+acme_rest_api_exchange_rates:
+    type: rest
+    prefix: /v1
+    resource: "Acme\ExchangeRateBundle\Controller\ExchangeRateController"

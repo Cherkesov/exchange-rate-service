@@ -1,0 +1,47 @@
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    margin: 0;
+}
+
+#contents {
+    min-height: 510px;
+    width: 880px;
+    margin: 0 auto;
+    padding: 54px 40px;
+}
+
+#contents .features {
+    width: 810px;
+    margin: 0 auto;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table caption,
+table th,
+table td {
+    padding: 4px 12px;
+    border: 1px solid lightblue;
+    text-align: center;
+}
+
+.btn-update {
+    padding: 10px 18px;
+    border: 1px solid #ddd;
+    background: #eee;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.btn-update:hover {
+    background: #ddd;
+}

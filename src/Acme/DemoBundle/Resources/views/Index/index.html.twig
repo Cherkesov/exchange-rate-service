@@ -1,0 +1,37 @@
+{% extends 'AcmeDemoBundle::layout.html.twig' %}
+
+{% block title %}
+    Exchange Rates
+{% endblock %}
+
+{% block content %}
+    {% if er_service is defined %}
+        <table>
+            <caption>Провайдер курса обмена валют</caption>
+            <tr>
+                <td>Url:</td>
+                <td><b>http://{{ er_service.serviceDomain }}</b></td>
+            </tr>
+            <tr>
+                <td>Описание:</td>
+                <td><b>{{ er_service.serviceDescription }}</b></td>
+            </tr>
+        </table>
+        <br/>
+    {% endif %}
+
+    <label>Выберите валюты для отображения: </label>
+    <ul id="currencies">
+    </ul>
+
+    <table id="er_table" class="er-table">
+        <thead>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br/>
+
+    <a href="#" id="er_cache_update" class="btn-update">
+        Обновить данные</a>
+{% endblock %}

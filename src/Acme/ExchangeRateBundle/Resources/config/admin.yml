@@ -1,0 +1,11 @@
+services:
+    sonata.admin.currency:
+        class: Acme\ExchangeRateBundle\Admin\CurrencyAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: null, label: "Валюты" }
+        arguments:
+            - ~
+            - Acme\ExchangeRateBundle\Entity\Currency
+            - ~
+        calls:
+            - [ setTranslationDomain, [messages]]

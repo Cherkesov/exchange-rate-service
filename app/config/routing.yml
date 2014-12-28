@@ -1,0 +1,17 @@
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+app:
+    resource: @AcmeDemoBundle/Controller/
+    type:     annotation
+
+acme_rest_api:
+    type: rest
+    prefix: /api
+    resource: "@AcmeExchangeRateBundle/Resources/config/routes.yml"
