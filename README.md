@@ -11,16 +11,16 @@ simple symfony-based application
 3. Download Symfony2 from http://symfony.com/download and unpack "bin" directory to project root folder
 4. Download composer.phar file from https://getcomposer.org/download/ (direct link is https://getcomposer.org/composer.phar)
 5. Run vendors installation with next command:
-    $ php composer.phar install
+    - php composer.phar install
 
     or if want to update vendors to last versions you should run command:
-    $ php composer.phar update
+    - php composer.phar update
 
 6. Install assets for installed bundles with command:
-    $ php app/console assets:install web
+    - php app/console assets:install web
 
 7. Generate DB scheme with entities annotations
-    $ php app/console doctrine:schema:update --force
+    - php app/console doctrine:schema:update --force
 
 2. USING
 =====================
@@ -30,6 +30,8 @@ simple symfony-based application
 You can create custom exchange rates data provider: just create new provider class in src\Acme\ExchangeRateBundle\Service\ExchangeRate.
 This class must extends AbstractExchangeRateService.
 3. If you want to change provider you should to change 'acme_exchange_rate' conf in /app/config/config.yml file - parameter 'provider' help you select others exchange rates providers.
+4. Under provider data table you can see tags input - use it for edit currencies list which used for building exchange rates table (located below).
+
 
 3. Admin dashboard
 =====================
