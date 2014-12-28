@@ -13,7 +13,7 @@ simple symfony-based application
 5. Run vendors installation with next command:
     $ php composer.phar install
 
-    or if wanna to update vendors to last versions you should run command:
+    or if want to update vendors to last versions you should run command:
     $ php composer.phar update
 
 6. Install assets for installed bundles with command:
