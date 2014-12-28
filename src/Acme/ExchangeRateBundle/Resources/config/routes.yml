@@ -1,9 +1,11 @@
+# Currencies list
 acme_rest_api_currencies_all:
     pattern:  /currency/all
     defaults: { _controller: AcmeExchangeRateBundle:Currency:getAll, _format: ~ }
     requirements:
         _method: GET
 
+# Info about single currency
 acme_rest_api_currency_get:
     pattern:  /currency/{id}
     defaults: { _controller: AcmeExchangeRateBundle:Currency:get, _format: ~ }
@@ -11,6 +13,7 @@ acme_rest_api_currency_get:
         _method: GET
         id: "\d+"
 
+# Get exchange rate by 2 3-letters codes of currencies
 acme_rest_api_exchange_rate_get:
     pattern:  /exchange_rate/{code}
     defaults: { _controller: AcmeExchangeRateBundle:ExchangeRate:get, _format: ~ }
