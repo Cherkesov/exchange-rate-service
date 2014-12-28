@@ -3,6 +3,13 @@ Exchange rate service
 
 Service to provide the current exchange rate
 
+INTRO
+=====================
+
+Application consists of 2 parts:
+- AcmeDemoBundle (site)
+- AcmeExchangeRateBundle (Exchange rates JSON API)
+
 1. INSTALLATION
 =====================
 
