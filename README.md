@@ -1,7 +1,7 @@
 Exchange rate service
 =====================
 
-simple symfony-based application
+Service to provide the current exchange rate
 
 1. INSTALLATION
 =====================
