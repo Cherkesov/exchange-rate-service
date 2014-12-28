@@ -1,4 +1,4 @@
-exchange-rate-service
+Exchange rate service
 =====================
 
 simple symfony-based application
@@ -21,3 +21,35 @@ simple symfony-based application
 
 7. Generate DB scheme with entities annotations
     $ php app/console doctrine:schema:update --force
+
+2. USING
+=====================
+
+1. Open page http://<your-virtual-host-url>/
+2. In first table you cab see info about exchange rate data provider.
+You can create custom exchange rates data provider: just create new provider class in src\Acme\ExchangeRateBundle\Service\ExchangeRate.
+This class must extends AbstractExchangeRateService.
+3. If you want to change provider you should to change 'acme_exchange_rate' conf in /app/config/config.yml file - parameter 'provider' help you select others exchange rates providers.
+
+3. Admin dashboard
+=====================
+
+1. Open in browser http://<your-virtual-host-url>/admin
+2. Use link for show list of currencies or for create new currency. If you open list you can edit or remove currencies.
+On site will showed only active currencies, so if you want use some currencies you should open its for editing and check option "Active".
+
+4. API description
+=====================
+
+Default data format - JSON
+
+Return all active currencies:
++ http://<your-virtual-host-url>/api/v1/currency/all
+
+Return data about currency with id equals to {id}:
++ http://<your-virtual-host-url>/api/v1/currency/{id}
++ http://<your-virtual-host-url>/api/v1/currency/123
+
+Get exchange rate. {code} is equals to concatination of 2 3-letters codes. For emaple, 'USDEUR' - 3-letters codes for United States Dollar and for Euro Member Countries
++ http://<your-virtual-host-url>/api/v1/exchange_rate/{code}
++ http://<your-virtual-host-url>/api/v1/exchange_rate/USDEUR
