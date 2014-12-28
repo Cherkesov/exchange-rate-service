@@ -2,14 +2,14 @@
  * Created by Sergey on 26.12.2014.
  */
 
-const GET_ALL_CURRENCIES_URL = '/api/v1/currency/all';
-const GET_EXCHANGE_RATE_URL = '/app_dev.php/api/v1/exchangerates/';
+const GET_ALL_CURRENCIES_URL = '/app_dev.php/api/v1/currency/all';
+const GET_EXCHANGE_RATE_URL = '/app_dev.php/api/v1/exchange_rate/';
 const DEF_CURRENCIES_LIST = ['RUB', 'EUR', 'USD', 'UAH', 'BYR'];
 const SEL_CUR_KEY = 'selected-currencies';
 
 const DAY = 24 * 60 * 60 * 1000;
-const MINUTE = 60 * 1000;
-const _20_SECONDS = 20 * 1000;
+//const MINUTE = 60 * 1000;
+//const _20_SECONDS = 20 * 1000;
 var expirationTime = DAY;
 
 var currenciesList = [];
