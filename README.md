@@ -6,7 +6,7 @@ simple symfony-based application
 1. INSTALLATION
 =====================
 
-1. Clone project to local machine to localhost folder.
+1. Clone project to local machine to new virtual host folder.
 2. Create database - open PhpMyAdmin and create new DB with name equal to "exchange_rates_db" and select utf8_general_ci collation.
 3. Download Symfony2 from http://symfony.com/download and unpack "bin" directory to project root folder
 4. Download composer.phar file from https://getcomposer.org/download/ (direct link is https://getcomposer.org/composer.phar)
