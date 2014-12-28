@@ -13,5 +13,5 @@ app:
 
 acme_rest_api:
     type: rest
-    prefix: /api
+    prefix: /api/v1
     resource: "@AcmeExchangeRateBundle/Resources/config/routes.yml"
