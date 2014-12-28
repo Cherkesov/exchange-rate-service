@@ -3,6 +3,7 @@
 namespace Acme\ExchangeRateBundle\Controller;
 
 use Acme\ExchangeRateBundle\Entity\Currency;
+use Acme\ExchangeRateBundle\Repo\CurrencyRepo;
 use FOS\RestBundle\Controller\FOSRestController;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -29,7 +30,7 @@ use Symfony\Component\Serializer\Serializer;
 /**
  * Class CurrencyController
  * @package Acme\ExchangeRateBundle\Controller
- * @RouteResource("Currency")
+ * @ RouteResource("Currency")
  */
 class CurrencyController extends FOSRestController
 {
@@ -39,8 +40,13 @@ class CurrencyController extends FOSRestController
      */
     public function getAllAction()
     {
-        $currencies = $this->getRepo()->findBy(['active' => true]);
-        return $currencies;
+        $currencies = $this->getRepo()->findAll();
+        if (count($currencies) ==0) {
+            $this->getRepo()->createDefaultData();
+        }
+
+        $activeCurrencies = $this->getRepo()->findBy(['active' => true]);
+        return $activeCurrencies;
     }
 
     /**
@@ -55,7 +61,7 @@ class CurrencyController extends FOSRestController
     }
 
     /**
-     * @return \Doctrine\Common\Persistence\ObjectRepository
+     * @return CurrencyRepo
      */
     private function getRepo()
     {

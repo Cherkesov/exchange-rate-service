@@ -13,7 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Currency
  * @package Acme\ExchangeRateBundle\Entity
- * @ORM\Entity()
+ * @ORM\Entity(
+ *  repositoryClass="Acme\ExchangeRateBundle\Repo\CurrencyRepo"
+ * )
  * @ORM\Table(
  *  name="currency",
  *  uniqueConstraints={
@@ -44,6 +46,18 @@ class Currency
      * @ORM\Column(type="boolean")
      */
     protected $active;
+
+    /**
+     * @param string $title
+     * @param string $code
+     * @param boolean $active
+     */
+    public function __construct($title = '', $code = '', $active = false)
+    {
+        $this->title = $title;
+        $this->code = $code;
+        $this->active = $active;
+    }
 
     /**
      * @return mixed
