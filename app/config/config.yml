@@ -98,4 +98,4 @@ jms_serializer:
                 path: "%kernel.root_dir%/serializer/FOSRB"
 
 acme_exchange_rate:
-    provider: appspot # appspot OR get_exchange_rate OR json_rates
+    provider: appspot # appspot OR json_rates
