@@ -11,6 +11,7 @@ app:
     resource: @AcmeDemoBundle/Controller/
     type:     annotation
 
+# Routes for exchange rate API
 acme_rest_api:
     type: rest
     prefix: /api/v1
