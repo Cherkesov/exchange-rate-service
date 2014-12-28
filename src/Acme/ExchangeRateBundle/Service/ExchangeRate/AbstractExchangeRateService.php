@@ -15,7 +15,7 @@ abstract class AbstractExchangeRateService
      * Link to exchange rates data provider
      * @return string
      */
-    public abstract function getServiceDomain();
+    public abstract function getServiceUrlExample();
 
     /**
      * Exchange rates data provider description

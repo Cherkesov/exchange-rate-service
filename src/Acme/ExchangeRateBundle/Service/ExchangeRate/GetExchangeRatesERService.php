@@ -15,7 +15,7 @@ class GetExchangeRatesERService extends AbstractExchangeRateService
     /**
      * @return string
      */
-    public function getServiceDomain()
+    public function getServiceUrlExample()
     {
         return '';
     }

@@ -15,7 +15,7 @@ class JsonRatesERService extends AbstractExchangeRateService
     /**
      * @return string
      */
-    public function getServiceDomain()
+    public function getServiceUrlExample()
     {
         return 'http://jsonrates.com/get/?from=USD&to=EUR';
     }
@@ -25,7 +25,8 @@ class JsonRatesERService extends AbstractExchangeRateService
      */
     public function getServiceDescription()
     {
-        return '';
+        return 'Вы можете просмотреть информацию о данном провайдере на странице<br/>
+<a href="http://jsonrates.com" target="_blank">http://jsonrates.com</a>';
     }
 
     /**

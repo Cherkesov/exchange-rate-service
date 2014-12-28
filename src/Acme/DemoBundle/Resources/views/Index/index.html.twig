@@ -9,15 +9,15 @@
         <table>
             <caption>Провайдер курса обмена валют</caption>
             <tr>
-                <td>Url:</td>
+                <td>Пример URL:</td>
                 <td>
-                    <a href="{{ er_service.serviceDomain }}" target="_blank">
-                        {{ er_service.serviceDomain }}</a>
+                    <a href="{{ er_service.serviceUrlExample }}" target="_blank">
+                        {{ er_service.serviceUrlExample }}</a>
                 </td>
             </tr>
             <tr>
                 <td>Описание:</td>
-                <td><b>{{ er_service.serviceDescription }}</b></td>
+                <td><b>{{ er_service.serviceDescription|raw }}</b></td>
             </tr>
         </table>
         <br/>
