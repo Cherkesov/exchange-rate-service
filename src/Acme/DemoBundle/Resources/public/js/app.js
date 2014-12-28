@@ -8,12 +8,16 @@ const DEF_CURRENCIES_LIST = ['RUB', 'EUR', 'USD', 'UAH', 'BYR'];
 const SEL_CUR_KEY = 'selected-currencies';
 
 const DAY = 24 * 60 * 60 * 1000;
-//const MINUTE = 60 * 1000;
-//const _20_SECONDS = 20 * 1000;
+const MINUTE = 60 * 1000;
+const _20_SECONDS = 20 * 1000;
 var expirationTime = DAY;
 
 var currenciesList = [];
 
+/**
+ * Load currencies list from API
+ * @param callback
+ */
 function loadCurrenciesList(callback) {
     $.ajax({
         url: GET_ALL_CURRENCIES_URL,
@@ -22,6 +26,13 @@ function loadCurrenciesList(callback) {
     });
 }
 
+/**
+ * Load exchange rate for one from-to currencies pair
+ * @param from
+ * @param to
+ * @param successCb
+ * @param errorCb
+ */
 function loadExchangeRate(from, to, successCb, errorCb) {
     $.ajax({
         url: GET_EXCHANGE_RATE_URL + from + to,
@@ -32,6 +43,13 @@ function loadExchangeRate(from, to, successCb, errorCb) {
     });
 }
 
+/**
+ * Show data about exchange rate as text in specified jquery-element
+ * @param from
+ * @param to
+ * @param $element
+ * @param clearCache
+ */
 function outputExRate(from, to, $element, clearCache) {
     var rate = $.jStorage.get(from + to);
     if (!clearCache && rate != undefined) {
@@ -50,6 +68,9 @@ function outputExRate(from, to, $element, clearCache) {
     }
 }
 
+/**
+ * Remove data about exchange rates
+ */
 function flushExRatesData() {
     for (var r = 0; r < currenciesList.length; r++) {
         for (var c = 0; c < currenciesList.length; c++) {
@@ -60,16 +81,28 @@ function flushExRatesData() {
     }
 }
 
+/**
+ * Get selected currencies list
+ * @returns {Array}
+ */
 function getSelectedCurrencies() {
     return ($.jStorage.get(SEL_CUR_KEY) != null)
         ? $.jStorage.get(SEL_CUR_KEY).split(',')
         : DEF_CURRENCIES_LIST;
 }
 
+/**
+ * Set selected currencies list
+ * @param arr
+ */
 function setSelectedCurrencies(arr) {
     $.jStorage.set(SEL_CUR_KEY, arr.join(','));
 }
 
+/**
+ * Show 2d views (table) about exchange rates
+ * @param availableTagsArr
+ */
 function drawTable(availableTagsArr) {
     var $table = $('#er_table');
     var $head = $table.find('thead');
@@ -104,6 +137,10 @@ function drawTable(availableTagsArr) {
     });
 }
 
+/**
+ * Get only currencies codes (without other data)
+ * @returns {Array}
+ */
 function getCurrenciesCodesArr(){
     var codes = [];
     for (var i = 0; i < currenciesList.length; i++) {
@@ -112,9 +149,11 @@ function getCurrenciesCodesArr(){
     return codes;
 }
 
+/**
+ * Init select currencies tags input
+ * @param currencies
+ */
 function initCurrenciesInput(currencies) {
-
-
     var $currenciesInput = $('#currencies');
     var selectedCurrencies = getSelectedCurrencies();
     for (var j = 0; j < selectedCurrencies.length; j++) {
@@ -135,6 +174,9 @@ function initCurrenciesInput(currencies) {
     });
 }
 
+/**
+ * Reload exchange rates data and reload page
+ */
 function reloadData() {
     flushExRatesData();
     document.location.reload();
