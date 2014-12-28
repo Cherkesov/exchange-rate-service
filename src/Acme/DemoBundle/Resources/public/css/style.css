@@ -32,6 +32,10 @@ table td {
     text-align: center;
 }
 
+#er_table tr td:first-child {
+    font-weight: bold;
+}
+
 .btn-update {
     padding: 10px 18px;
     border: 1px solid #ddd;
