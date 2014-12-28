@@ -22,6 +22,10 @@ Service to provide the current exchange rate
 7. Generate DB scheme with entities annotations
     - php app/console doctrine:schema:update --force
 
+8. Download phpunit.phar and run
+    - php phpunit.phar -c app/
+    if you want to run tests and check application
+
 2. USING
 =====================
 
